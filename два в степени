@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Степень_двойки
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            int degree = 0;
+            int maxNumber = 2;
+            int minNumber = 2;
+            int minNumberToMultiply = 2;
+            Random random = new Random();
+            number = random.Next(2, 1000);
+            Console.WriteLine(number + "рандомное число");
+
+            for (int i = minNumber; i <= number; i *= minNumber)
+            {
+                degree++;
+                maxNumber = minNumberToMultiply *= minNumber;
+            }
+
+            degree++;
+            Console.WriteLine("2 в степени " + degree + " (" + maxNumber + ") - ближайшее к числу " + number);
+            Console.ReadKey();
+        }
+    }
+}
